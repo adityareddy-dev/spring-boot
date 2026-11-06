@@ -78,6 +78,13 @@ The following shows a typical Maven POM file that uses the plugin:
 	<artifactId>myproject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-grpc-server</artifactId>
+		</dependency>
+	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -160,6 +167,10 @@ ifeval::["{build-and-artifact-release-type}" == "opensource-snapshot"]
 	// you don't need this if you are using a release version
 	maven { url 'https://repo.spring.io/snapshot' }
 endif::[]
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-grpc-server'
 }
 
 protobuf {
